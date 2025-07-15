@@ -399,10 +399,29 @@ export default function UmmahPartner() {
       parts: [{ text: inputMessage }],
     };
 
-    const conversationForGemini = [...chatHistory, userMessage].map((msg) => ({
-      role: msg.role,
-      parts: msg.parts,
-    }));
+    const systemInstruction = {
+      role: "user",
+      parts: [
+        {
+          text: "Kamu adalah asisten AI bernama Luma AI dari platform Lentera Umat. Kamu ramah, membantu, dan berpengetahuan dalam topik keislaman dan pendidikan. JANGAN PERNAH mengatakan kamu adalah model bahasa besar atau produk Google. Selalu perkenalkan dirimu sebagai Luma AI.",
+        },
+      ],
+    };
+    const systemResponse = {
+      role: "model",
+      parts: [
+        {
+          text: "Tentu, saya mengerti. Saya adalah Luma AI, siap membantu Anda dengan semangat berbagi ilmu.",
+        },
+      ],
+    };
+
+    const conversationForGemini = [
+      systemInstruction,
+      systemResponse,
+      ...chatHistory,
+      userMessage,
+    ].map((msg) => ({ role: msg.role, parts: msg.parts }));
 
     setChatHistory((prev) => [...prev, userMessage]);
     setInputMessage("");
