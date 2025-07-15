@@ -272,7 +272,7 @@ export default function UmmahPartner() {
     try {
       let pdfData;
       if (typeof source === "string") {
-        pdfData = source;
+        pdfData = source.replace("http://", "https://");
       } else if (source instanceof File) {
         pdfData = await readFileAsArrayBuffer(source);
       } else {
