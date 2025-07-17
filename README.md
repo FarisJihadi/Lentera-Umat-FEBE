@@ -40,13 +40,9 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek secara lokal di komputer 
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone <URL_REPOSITORI_LENTERA_UMMAT_ANDA>
+git clone <https://github.com/FarisJihadi/Lentera-Umat-FEBE/tree/main>
 cd lentera-umat-febe
 ```
-
-> Ganti `<URL_REPOSITORI_LENTERA_UMMAT_ANDA>` dengan URL repositori Git Anda.
-
----
 
 ### 2️⃣ Setup & Jalankan Backend (API)
 
